@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Homework
+    
+
+    //let userNumber1 = parseInt(prompt("Enter first number"));
+    //let userNumber2 = parseInt(prompt("Enter second number"));
+    
+    let sum = parseInt(0);
+    let numbers = [];
+    let numbers2 = [];
+    let signedArray = [0,0,0]; // - , + , 0
+    let WeekArr = ["Monday" , "Tuesday" , "Wendnesday", "Thursday" , "Friday" , "Saterday" , "Sunday"]
+    let iWeekArr = 0;
+    let numberMax = parseInt(0);
+    let BoolianValue1;
+    let BoolianValue2;
+
+    let min = 0;
+    let max = 100;
+
+    let N = Math.floor((min + max) / 2);
+
+    alert("Guess number from 0 to 100");
+
+
+
+    while(true) {
+        let answer = prompt(" Your Number > " + N + ", < " + N + " or == " + N + "?");
+        if (answer === ">") {
+    
+        min = N + 1;
+    } else if (answer === "<") {
+        
+        max = N - 1;
+    } else if (answer === "==") {
+        
+        alert("I guessed , your number is: " + N);
+        break;
+    } else {
+        
+        alert("Please, enter only > , < або ==");
+    }
+    }
+
+    
+
+
+
+    //Task 9
+    /*
+    for(i = 2; i <= 9; i++) {
+        for(j = 1; j <= 10; j++) {
+            document.write(i * j + " ");
+        }
+        document.write("<br>");
+    }*/
+
+
+
+
+
+
+
+    //Task 8
+    /*
+    while(true ) {
+        let userChoose = prompt(WeekArr[iWeekArr] + "Wanna see next day?: (true/False)"); //WeekArr[iWeekArr] + 
+        if ( userChoose == "true") {
+            iWeekArr++
+        }
+        else if (userChoose == "false") {
+            break;
+        }
+    }*/
+
+    //Task7
+    /*
+    let userArr = userNumber1.toString().split("");
+    userNumber2 = userNumber2 % userArr.length;
+    let newNumber = userArr.slice(userNumber2).concat(userArr.slice(0, userNumber2)).join("");
+    alert("New number: " + newNumber);
+    */
+    //Task 6
+    /*
+    while(true) {
+        let userNumber1 = parseInt(prompt("Enter first number of range"));
+        let userNumber2 = parseInt(prompt("Enter second number of range"));
+        let userOperator = prompt("Enter your operator for calculator");
+
+        if(userOperator == "+") {
+            userNumber1 += userNumber2;
+            alert(userNumber1);
+        }
+        else if( userOperator == "-"){
+            userNumber1 -= userNumber2;
+            alert(userNumber1);
+        }
+        else if( userOperator == "*") {
+            userNumber1 *= userNumber2;
+            alert(userNumber1);
+        }
+        else if( userOperator == "/") {
+            userNumber1 /= userNumber2;
+            alert(userNumber1);
+        }
+        else if( userOperator == "^") {
+            userNumber1 **= userNumber2;
+            alert(userNumber1);
+        }
+
+        BoolUserChoose = Boolean(prompt("Continue? (true/false)"));
+        if(BoolUserChoose == false) {
+            break;
+        }
+    }
+    */
+
+
+
+
+
+
+    //Task 5
+    /*
+    let strUserIn = prompt("Enter your numbers: (-1,-2,-3 and etc)");
+    let stringUserArray = strUserIn.split(" ").map(x => Number(x.trim()));
+    for(i = 0; i < stringUserArray.length; i++) {
+        if(stringUserArray[i] < 0) {
+            signedArray[0]++;
+        }
+        else if(stringUserArray[i] > 0) {
+            signedArray[1]++;
+        }
+        else if(stringUserArray[i] == 0) {
+            signedArray[2]++;
+        }
+    }
+    alert("Number of numbers if sigh ( - , + , )" + signedArray.join("|"))
+    */
+
+    
+    
+    //Task 4
+    /*
+    for(i = 1; i <= userNumber1.toString().length; i++) {
+        sum++;
+    }
+
+    alert("in this number: " + userNumber1 + " This numbers of digits: " + sum);
+    */
+    // Task 3
+    /*
+    for(i = 0; i <= userNumber1; i++) {
+        let BoolianValue1 = Boolean(CanDivine(userNumber1,i));
+        if (BoolianValue1 == true) {
+            numbers2.push(i);
+        }
+    }
+
+    alert("For this number: " + userNumber1 + " Divine numbers is: " + numbers2.splice("|"))
+    */
+    
+
+
+    //Task 2
+    /*
+    
+
+    for (i = 1; i <= 100; i++) {
+        BoolianValue1 = Boolean(CanDivine(userNumber1,i));
+        BoolianValue2 = Boolean(CanDivine(userNumber2,i));
+        if (BoolianValue1 === true && BoolianValue2 === true) {
+            numbers.push(i);
+
+        }
+    }
+    for (i = 0; i <= numbers.length; i++){
+        if (numberMax < numbers[i]) {
+            numberMax = numbers[i];
+        }
+    }
+
+    
+    alert("This two numbers: " + userNumber1 + " - " + userNumber2 + " Have this numbers of greatest common divisor: " + numberMax );
+    */
+
+    /* Task 1
+    let userNumber1 = parseInt(prompt("Enter first number of range"));
+    let userNumber2 = parseInt(prompt("Enter second number of range"));
+    let sum = parseInt(0)
+    if (userNumber1 > userNumber2){
+        alert("You entered wrong range of numbers , first number bigger than second number")
+    }
+
+    for (i = userNumber1; i <= userNumber2; i++) {
+        sum  += i;
+        console.log(sum)
+    }
+
+    console.log(sum)
+    alert("Sum of numbers: " + sum)
+    */
+
+    //#region Class Work
+    //Class work 
+    //let numberr = prompt("Enter your number to identify it")
+    //let age = promt("Enter your age:")
+    /* Task 3
+    let numberOfUser = prompt("Enter your number to module it")
+    if(numberOfUser < 0 ) {
+        numberOfUser = -numberOfUser
+    } 
+    console.log(numberOfUser);*/
+    /* Task 2
+    if(age <= 0 | age >= 120 ) {
+        console.log("Wrong age, you trying fool server")
+    }*/
+        
+    /* //Task 1
+        if (numberr > 0) {
+            console.log("Number is bigger than 0")
+        }
+        else if (number < 0) {
+            console.log("Number is smaller than 0")
+        }
+        else if (number = 0) {
+            console.log("Number is zero")
+        }*/
+    
+    //#endregion
+
+    function CanDivine(n1 , n2) {
+        if(n1 % n2 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    </script>
+</body>
+</html>
