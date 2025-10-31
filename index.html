@@ -7,12 +7,59 @@
 </head>
 <body>
     <script>
+    //Practice
+    //Task 10
+    //Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2 заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».
+
+
+function toSecond(day, month, year, hours = 0, minutes = 0, seconds = 0) {
+    let date = new Date(year, month - 1, day, hours, minutes, seconds);
+    return Math.floor(date.getTime() / 1000); 
+}
+
+function toTimeFormat(seconds) {
+    let hours = Math.floor(seconds / 3600);
+    seconds %= 3600;
+    let minutes = Math.floor(seconds / 60);
+    seconds %= 60;
+
+    
+    return (
+        String(hours).padStart(2, "0") + ":" +
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0")
+    );
+}
+
+
+function diffBetweenDates(d1, m1, y1, d2, m2, y2) {
+    let sec1 = toSeconds(d1, m1, y1);
+    let sec2 = toSeconds(d2, m2, y2);
+
+    let diff = Math.abs(sec2 - sec1); 
+    return toTimeFormat(diff);        
+}
+
+
+let day1 = parseInt(prompt("Enter first day of date:"));
+let month1 = parseInt(prompt("Enter first month of dat:"));
+let year1 = parseInt(prompt("Enter first year of date:"));
+
+let day2 = parseInt(prompt("Enter second day of date:"));
+let month2 = parseInt(prompt("Enter second month of dat:"));
+let year2 = parseInt(prompt("Enter second year of date:"));
+
+let result = diffBetweenDates(day1, month1, year1, day2, month2, year2);
+alert("Diffirience from this dates: " + result);
+
+
+
     //Homework
     
 
     //let userNumber1 = parseInt(prompt("Enter first number"));
     //let userNumber2 = parseInt(prompt("Enter second number"));
-    
+    /*
     let sum = parseInt(0);
     let numbers = [];
     let numbers2 = [];
@@ -50,7 +97,7 @@
     }
     }
 
-    
+    */
 
 
 
